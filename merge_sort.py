@@ -7,7 +7,6 @@ def merge(left, right):
         def merge_help(left, right, result):
                 if len(left) == 0: return result + right
                 if len(right) == 0: return result+left
-
                 return merge_help(left[1:], right, result+[left[0]]) if left[0]<=right[0] \
                         else merge_help(left, right[1:], result+[right[0]] )
         return merge_help(left, right, [])	
